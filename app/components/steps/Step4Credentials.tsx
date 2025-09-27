@@ -126,7 +126,7 @@ export function Step4Credentials() {
                 type="button"
                 onClick={() => setShowWebhookInfo(!showWebhookInfo)}
                 className="ml-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-                title="How to get ngrok URL"
+                title="How to get webhook server URL"
               >
                 <Info className="w-4 h-4" />
               </button>
@@ -135,11 +135,11 @@ export function Step4Credentials() {
               type="url"
               value={botCredentials.webhookUrl || ''}
               onChange={(e) => handleInputChange('webhookUrl', e.target.value)}
-              placeholder="https://your-ngrok-url.ngrok-free.app"
+              placeholder="https://slimy-lemons-know.loca.lt"
               className="wizard-input"
             />
             <p className="text-xs text-velvet-grey mt-1">
-              Your ngrok webhook URL for local development
+              Your webhook URL for local development
             </p>
             
             {/* Webhook Info Popover */}
@@ -155,44 +155,44 @@ export function Step4Credentials() {
                   
                   <h3 className="text-lg font-semibold mb-4 flex items-center">
                     <Info className="w-5 h-5 mr-2 text-blue-500" />
-                    How to get your ngrok URL
+                    How to get your webhook server URL
                   </h3>
                   
                   <ol className="space-y-3 text-sm">
                     <li className="flex items-start">
-                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5">1</span>
+                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">1</span>
                       <div>
                         <strong>Open VS Code</strong>
                         <p className="text-gray-600 dark:text-gray-400">Navigate to your project in VS Code</p>
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5">2</span>
+                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">2</span>
                       <div>
                         <strong>Open Terminal</strong>
                         <p className="text-gray-600 dark:text-gray-400">Click on Terminal → New Terminal</p>
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5">3</span>
+                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">3</span>
                       <div>
                         <strong>Run the command</strong>
                         <p className="text-gray-600 dark:text-gray-400 mb-2">Execute this command:</p>
-                        <code className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs font-mono">yarn dev</code>
+                        <code className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs font-mono">npm run dev</code>
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5">4</span>
+                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">4</span>
                       <div>
                         <strong>Copy the URL</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Look for the URL ending with <code className="bg-gray-100 dark:bg-gray-700 px-1 rounded text-xs">ngrok-free.app</code> and copy it</p>
+                        <p className="text-gray-600 dark:text-gray-400">Look for the line that says <code className="bg-gray-100 dark:bg-gray-700 px-1 rounded text-xs">"your url is:"</code> and copy the URL (e.g., https://slimy-lemons-know.loca.lt)</p>
                       </div>
                     </li>
                   </ol>
                   
                   <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded">
                     <p className="text-xs text-blue-700 dark:text-blue-300">
-                      <strong>Note:</strong> This ngrok URL is required for webhook functionality in your bot development.
+                      <strong>Note:</strong> This URL is required for webhook functionality in your bot development.
                     </p>
                   </div>
                 </div>
