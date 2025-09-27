@@ -185,7 +185,7 @@ export function Step4Credentials() {
                       <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">4</span>
                       <div>
                         <strong>Copy the URL</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Look for the line that says <code className="bg-gray-100 dark:bg-gray-700 px-1 rounded text-xs">"your url is:"</code> and copy the URL (e.g., https://slimy-lemons-know.loca.lt)</p>
+                        <p className="text-gray-600 dark:text-gray-400">Look for the line that says <code className="bg-gray-100 dark:bg-gray-700 px-1 rounded text-xs">&quot;your url is:&quot;</code> and copy the URL (e.g., https://slimy-lemons-know.loca.lt)</p>
                       </div>
                     </li>
                   </ol>
