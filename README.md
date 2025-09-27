@@ -100,6 +100,7 @@ app/
 └── page.tsx           # Main application entry
 ```
 
+user2@wx1-ai-assist.wbx.ai
 xK?4hB*xOX
 
 ## License
