@@ -21,7 +21,7 @@ export function Step4Credentials() {
 
       setBotCredentials({
         ...botCredentials,
-        name: 'AI Assistant Lab Bot',
+        name: 'AIAssistantLabBot',
         email: generateBotUsername()
       })
     }
@@ -110,7 +110,7 @@ export function Step4Credentials() {
               type="text"
               value={botCredentials.name}
               onChange={(e) => handleInputChange('name', e.target.value)}
-              placeholder="AI Assistant Lab Bot"
+              placeholder="AIAssistantLabBot"
               className="wizard-input"
             />
             <p className="text-xs text-velvet-grey mt-1">
@@ -135,7 +135,7 @@ export function Step4Credentials() {
               type="url"
               value={botCredentials.webhookUrl || ''}
               onChange={(e) => handleInputChange('webhookUrl', e.target.value)}
-              placeholder="https://slimy-lemons-know.loca.lt"
+              placeholder="https://xlblz-12-157-146-250.a.free.pinggy.link"
               className="wizard-input"
             />
             <p className="text-xs text-velvet-grey mt-1">
@@ -162,19 +162,33 @@ export function Step4Credentials() {
                     <li className="flex items-start">
                       <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">1</span>
                       <div>
-                        <strong>Open VS Code</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Navigate to your project in VS Code</p>
+                        <strong>Open Desktop</strong>
+                        <p className="text-gray-600 dark:text-gray-400">Navigate to Desktop > AI Assistant Lab</p>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">2</span>
                       <div>
-                        <strong>Open Terminal</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Click on Terminal → New Terminal</p>
+                        <strong>Open Visual Studio Code</strong>
+                        <p className="text-gray-600 dark:text-gray-400">Go to File > New Window</p>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">3</span>
+                      <div>
+                        <strong>Drag and drop project</strong>
+                        <p className="text-gray-600 dark:text-gray-400">Drag and drop bot-creation in AI Assistant Lab into Visual Studio Code</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">4</span>
+                      <div>
+                        <strong>Open Terminal</strong>
+                        <p className="text-gray-600 dark:text-gray-400">Click on Terminal > New Terminal</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">5</span>
                       <div>
                         <strong>Install dependencies</strong>
                         <p className="text-gray-600 dark:text-gray-400 mb-2">Execute this command:</p>
@@ -182,18 +196,18 @@ export function Step4Credentials() {
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">4</span>
+                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">6</span>
                       <div>
-                        <strong>Run the development server</strong>
+                        <strong>Run development server</strong>
                         <p className="text-gray-600 dark:text-gray-400 mb-2">Execute this command:</p>
                         <code className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs font-mono">npm run dev</code>
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">5</span>
+                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">7</span>
                       <div>
-                        <strong>Copy the URL</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Look for the line that says <code className="bg-gray-100 dark:bg-gray-700 px-1 rounded text-xs">&quot;your url is:&quot;</code> and copy the URL (e.g., https://slimy-lemons-know.loca.lt)</p>
+                        <strong>Copy URL</strong>
+                        <p className="text-gray-600 dark:text-gray-400">Look for the line that says <code className="bg-gray-100 dark:bg-gray-700 px-1 rounded text-xs">&quot;your url is:&quot;</code> and copy the URL (e.g., https://xlblz-12-157-146-250.a.free.pinggy.link)</p>
                       </div>
                     </li>
                   </ol>

@@ -1,6 +1,6 @@
 'use client'
 
-import { MessageSquare, CheckCircle, RotateCcw } from 'lucide-react'
+import { MessageSquare, CheckCircle, RotateCcw, Info, X, Copy, Check } from 'lucide-react'
 import { useWizard } from '../../contexts/WizardContext'
 import { CopyablePrompt } from '../CopyablePrompt'
 import { useRef, useEffect, useState } from 'react'
@@ -10,6 +10,8 @@ export function Step5Coding() {
   const promptRefs = useRef<(HTMLDivElement | null)[]>([])
   const [isHeaderSticky, setIsHeaderSticky] = useState(false)
   const headerRef = useRef<HTMLDivElement>(null)
+  const [showTestInfo, setShowTestInfo] = useState(false)
+  const [copiedEmail, setCopiedEmail] = useState(false)
 
   // Intersection Observer to detect when header becomes sticky
   useEffect(() => {
@@ -42,6 +44,16 @@ export function Step5Coding() {
       top: 0,
       behavior: 'smooth'
     })
+  }
+
+  const copyBotEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(botCredentials.email)
+      setCopiedEmail(true)
+      setTimeout(() => setCopiedEmail(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy email: ', err)
+    }
   }
 
   const prompts = [
@@ -95,6 +107,14 @@ export function Step5Coding() {
             </div>
             <div className="flex items-center space-x-3">
               <button
+                onClick={() => setShowTestInfo(true)}
+                className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors text-blue-700 dark:text-blue-300 text-sm"
+                title="How to test your bot code"
+              >
+                <Info className="w-4 h-4" />
+                <span>How to test code?</span>
+              </button>
+              <button
                 onClick={resetStep5Prompts}
                 className="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-gray-700 dark:text-gray-300"
                 title="Reset Step 5 Progress"
@@ -120,7 +140,17 @@ export function Step5Coding() {
           <div className="text-sm space-y-2 text-velvet-grey">
             <p>• Copy each prompt and paste it into your AI assistant</p>
             <p>• Use the generated code to build your bot incrementally</p>
-            <p>• Test each feature in Webex before proceeding to the next step</p>
+            <p className="flex items-center">
+              • Test each feature in Webex before proceeding to the next step
+              <button
+                type="button"
+                onClick={() => setShowTestInfo(true)}
+                className="ml-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-200"
+                title="How to test your bot"
+              >
+                <Info className="w-4 h-4" />
+              </button>
+            </p>
             <p>• Mark each step as complete once you&apos;ve implemented and verified the functionality</p>
           </div>
         </div>
@@ -219,6 +249,82 @@ export function Step5Coding() {
           </button>
         </div>
       </div>
+
+      {/* Test Instructions Modal */}
+      {showTestInfo && (
+        <div className="fixed inset-0 bg-black bg-opacity-25 z-50 flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-lg w-full p-6 relative">
+            <button
+              onClick={() => setShowTestInfo(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            <h3 className="text-lg font-semibold mb-4 flex items-center">
+              <Info className="w-5 h-5 mr-2 text-blue-500" />
+              How to test your bot
+            </h3>
+            
+            <ol className="space-y-3 text-sm">
+              <li className="flex items-start">
+                <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">1</span>
+                <div>
+                  <strong>Copy the code from the AI Assistant</strong>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">2</span>
+                <div>
+                  <strong>Go to Visual Studio Code &gt; bot-creation</strong>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">3</span>
+                <div>
+                  <strong>Replace the code with app.js</strong>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">4</span>
+                <div>
+                  <strong>Save</strong>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">5</span>
+                <div>
+                  <strong>Go to https://web.webex.com and Login</strong>
+                  <p className="text-gray-600 dark:text-gray-400 mt-1">Search for your Bot Email:</p>
+                  <div className="flex items-center space-x-2 mt-2">
+                    <code className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs font-mono flex-1">
+                      {botCredentials.email}
+                    </code>
+                    <button
+                      onClick={copyBotEmail}
+                      className="flex items-center justify-center w-8 h-8 bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 rounded transition-colors"
+                      title="Copy Bot Email"
+                    >
+                      {copiedEmail ? (
+                        <Check className="w-3 h-3 text-green-600" />
+                      ) : (
+                        <Copy className="w-3 h-3 text-gray-600 dark:text-gray-400" />
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">6</span>
+                <div>
+                  <strong>Start interacting with your bot</strong>
+                  <p className="text-gray-600 dark:text-gray-400 mt-1">In the left, your bot will appear and you can start testing it</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
