@@ -163,14 +163,14 @@ export function Step4Credentials() {
                       <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">1</span>
                       <div>
                         <strong>Open Desktop</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Navigate to Desktop > AI Assistant Lab</p>
+                        <p className="text-gray-600 dark:text-gray-400">Navigate to Desktop &gt; AI Assistant Lab</p>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">2</span>
                       <div>
                         <strong>Open Visual Studio Code</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Go to File > New Window</p>
+                        <p className="text-gray-600 dark:text-gray-400">Go to File &gt; New Window</p>
                       </div>
                     </li>
                     <li className="flex items-start">
@@ -184,7 +184,7 @@ export function Step4Credentials() {
                       <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">4</span>
                       <div>
                         <strong>Open Terminal</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Click on Terminal > New Terminal</p>
+                        <p className="text-gray-600 dark:text-gray-400">Click on Terminal &gt; New Terminal</p>
                       </div>
                     </li>
                     <li className="flex items-start">
