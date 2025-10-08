@@ -162,33 +162,27 @@ export function Step4Credentials() {
                     <li className="flex items-start">
                       <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">1</span>
                       <div>
-                        <strong>Open Desktop</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Navigate to Desktop &gt; AI Assistant Lab</p>
+                        <strong>Clone repository</strong>
+                        <p className="text-gray-600 dark:text-gray-400 mb-2">Clone the bot-creation repository:</p>
+                        <code className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs font-mono">git clone https://github.com/mkesavan13/bot-creation</code>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">2</span>
                       <div>
-                        <strong>Open Visual Studio Code</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Go to File &gt; New Window</p>
+                        <strong>Open VS Code with the cloned repo</strong>
+                        <p className="text-gray-600 dark:text-gray-400">Open Visual Studio Code and open the bot-creation folder</p>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">3</span>
-                      <div>
-                        <strong>Drag and drop project</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Drag and drop bot-creation in AI Assistant Lab into Visual Studio Code</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">4</span>
                       <div>
                         <strong>Open Terminal</strong>
                         <p className="text-gray-600 dark:text-gray-400">Click on Terminal &gt; New Terminal</p>
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">5</span>
+                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">4</span>
                       <div>
                         <strong>Install dependencies</strong>
                         <p className="text-gray-600 dark:text-gray-400 mb-2">Execute this command:</p>
@@ -196,18 +190,12 @@ export function Step4Credentials() {
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">6</span>
+                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">5</span>
                       <div>
-                        <strong>Run development server</strong>
+                        <strong>Run development server and copy URL</strong>
                         <p className="text-gray-600 dark:text-gray-400 mb-2">Execute this command:</p>
                         <code className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-xs font-mono">npm run dev</code>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5 flex-shrink-0 font-mono">7</span>
-                      <div>
-                        <strong>Copy URL</strong>
-                        <p className="text-gray-600 dark:text-gray-400">Look for the line that says <code className="bg-gray-100 dark:bg-gray-700 px-1 rounded text-xs">&quot;your url is:&quot;</code> and copy the URL (e.g., https://xlblz-12-157-146-250.a.free.pinggy.link)</p>
+                        <p className="text-gray-600 dark:text-gray-400 mt-2">Look for the line that says <code className="bg-gray-100 dark:bg-gray-700 px-1 rounded text-xs">&quot;your url is:&quot;</code> and copy the URL (e.g., https://xlblz-12-157-146-250.a.free.pinggy.link)</p>
                       </div>
                     </li>
                   </ol>
